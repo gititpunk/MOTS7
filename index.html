@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Maven+Pro|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+
+    <div class="bg">
+      <video playsinline loop muted  autoplay class="btsbg">
+        <source src="swan-dp.mp4" type="video/mp4">
+
+      </video>
+
+
+    </div>
+<div class="container">
+      <h1 class="soul">MAP OF THE SOUL <span class="seven">7
+        </span></h1>
+
+
+        <ul class="countdown">
+          <li><span id="days"></span>days</li>
+          <li><span id="hours"></span>Hours</li>
+          <li><span id="minutes"></span>Minutes</li>
+          <li><span id="seconds"></span>Seconds</li>
+        </ul>
+  </div>
+
+
+<script>
+const second = 1000,
+minute = second * 60,
+hour = minute * 60,
+day = hour * 24;
+
+let countDown = new Date('Feb 28, 2020 00:00:00').getTime(),
+x = setInterval(function() {
+
+let now = new Date().getTime(),
+    distance = countDown - now;
+
+document.getElementById('days').innerText = Math.floor(distance / (day)),
+  document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+  document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+  document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+//do something later when date is reached
+//if (distance < 0) {
+//  clearInterval(x);
+//
+//}
+
+}, second)
+</script>
+  </body>
+</html>
